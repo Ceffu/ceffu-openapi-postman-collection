@@ -1,0 +1,1699 @@
+{
+	"info": {
+		"_postman_id": "e4d5ebb2-4ba9-45c5-a695-2d66596b82e7",
+		"name": "OpenAPI Documentation",
+		"description": "This is a Postman collection of Ceffu OpenAPI  \n[https://apidoc.ceffu.io/apidoc/shared-c9ece2c6-3ab4-4667-bb7d-c527fb3dbf78/doc-338167](https://apidoc.ceffu.io/apidoc/shared-c9ece2c6-3ab4-4667-bb7d-c527fb3dbf78/doc-338167)\n\nTo start with, fill in the values of \"openapi\" and \"secret\" in production environment.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37536112",
+		"_collection_link": "https://ceffu0.postman.co/workspace/5827e483-9784-48b3-a454-d82596d9a252/collection/37536112-e4d5ebb2-4ba9-45c5-a695-2d66596b82e7?action=share&source=collection_link&creator=37536112"
+	},
+	"item": [
+		{
+			"name": "System Endpoint",
+			"item": [
+				{
+					"name": "GET System status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/system/status",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"system",
+								"status"
+							]
+						},
+						"description": "This method allows to fetch system status for different wallet types and business types.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet Endpoint",
+			"item": [
+				{
+					"name": "Get Prime Wallet supported coins list (incl. network)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/shared/coin?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"shared",
+								"coin"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null
+								}
+							]
+						},
+						"description": "This method allows you to get the supported coins list of prime wallet.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Qualified Wallet supported coins list (incl. network)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/qualified/coin?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"qualified",
+								"coin"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								}
+							]
+						},
+						"description": "This method allows you to get the supported coins list of qualified wallet.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cosign wallet supporting coin list (incl. Network)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/cosign/coin?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"cosign",
+								"coin"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								}
+							]
+						},
+						"description": "This method allows you to get the supported coins list of cosign wallet.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wallet List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/list?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get all parent wallet IDs of the institution including both Qualified Wallets and Prime Wallets. \\[Not including the underlying sub wallets\\]\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Asset Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/asset/list?timestamp&walletId=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"asset",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "(Optional) Specified coin network (not applicable to Prime Wallet)",
+									"disabled": true
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get all assets of the specified wallet ID, coinSymbol and network. Supports both Parent wallet or Sub wallet.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wallet Asset Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/asset/summary?timestamp&walletIdStr=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"asset",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletIdStr",
+									"value": "",
+									"description": "Wallet id"
+								}
+							]
+						},
+						"description": "This method allows you to get the specified wallet's asset summary, represented in its equivalent BTC & USD value.\n\nPlease note that this equivalent value is provided for reference only and is based on our internal calculation.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/deposit/address?timestamp&walletId=&network=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"deposit",
+								"address"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "Network symbol"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) The coinSymbol (in capital letters) is required for the Prime Wallet but not for the Qualified Wallet and Co-sign Wallet.\nThe coinSymbol might vary depending on the wallet type. Please refer to the corresponding API documentation to check the accurate coinSymbol for each wallet type.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the deposit address of the requested walletId, coinSymbol and network.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/deposit/history?timestamp&walletId=&startTime=&endTime=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"deposit",
+								"history"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "Start time (timestamp in milliseconds)"
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "End time (timestamp in milliseconds)"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "(Optional) Network symbol, all networks are returned if not specified",
+									"disabled": true
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol, all symbols are returned if not specified",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the deposit history of the requested walleId, coinSymbol and network.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/wallet/deposit/detail?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"wallet",
+								"deposit",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "txId",
+									"value": "",
+									"description": "(Optional) Transaction id",
+									"disabled": true
+								},
+								{
+									"key": "orderViewId",
+									"value": "",
+									"description": "(Optional) Order view id",
+									"disabled": true
+								},
+								{
+									"key": "memo",
+									"value": null,
+									"description": "(Optional) Memo value for Prime Wallet",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "",
+									"description": "(Optional) Source address for Prime Wallet",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the deposit details of the requested transaction ID.\n\n- Either txId or orderViewId shall be passed in params.\n    \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Withdrawal Fee (estimated)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/withdrawal/fee?timestamp&walletId=&network=&coinSymbol=&amount=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"withdrawal",
+								"fee"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "Network symbol"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "Coin symbol"
+								},
+								{
+									"key": "amount",
+									"value": "",
+									"description": "Amount to withdrawal"
+								},
+								{
+									"key": "toWalletIdStr",
+									"value": "",
+									"description": "(Optional) Destination wallet id",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the estimated withdrawal fee by providing walletId, coinSymbol, network and withdrawal amount.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Withdrawal History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/wallet/withdrawal/history?timestamp&walletId=&startTime=&endTime=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"wallet",
+								"withdrawal",
+								"history"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "Start time (timestamp in milliseconds)"
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "End time (timestamp in milliseconds)"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "(Optional) Network symbol, all networks are returned if not specified",
+									"disabled": true
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol, all symbols are returned if not specified",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "(Optional) Status :\n10: Pending\n20: Processing\n30: Send success\n40: Confirmed\n99: Failed",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the withdrawal of the requested wallet ID, coinSymbol and network.\n\n- Amount field will include withdrawal fee if the fee is paid in same coin symbol.\n    \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Withdrawal Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/wallet/withdrawal/detail?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"wallet",
+								"withdrawal",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "orderViewId",
+									"value": "",
+									"description": "(Optional) Order view id",
+									"disabled": true
+								},
+								{
+									"key": "requestId",
+									"value": "",
+									"description": "(Optional) Client request identifier: Universal Unique identifier provided by the client side",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get withdrawal details by _orderViewId_ or _requestId_\n\n- Either orderViewId or requestId shall be passed in params.\n    \n- Amount field will include withdrawal fee if the fee is paid in same coin symbol.\n    \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/create",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"create"
+							]
+						},
+						"description": "This method allows you to create a new wallet.\n\n**API Key permission group** : `Enable Wallet Management`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| walletName | string | Name of wallet |\n| walletType | integer | 10 (Qualified Wallet), 20 (Prime Wallet) |"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Wallet Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/updateWallet",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"updateWallet"
+							]
+						},
+						"description": "This method allows you to update wallet attributes.\n\n**API Key permission group** : `Enable Wallet Management`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| walletId | string | Wallet id |\n| walletName | string | Name of wallet |"
+					},
+					"response": []
+				},
+				{
+					"name": "Withdrawal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/wallet/withdrawal",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"wallet",
+								"withdrawal"
+							]
+						},
+						"description": "This method enables the withdrawal of funds from the specified wallet to an external address or a Ceffu wallet. The withdrawal endpoint is applicable only to parent wallet. To indicate the destination, either 'withdrawalAddress' or 'ToWalletIdStr' must be provided. If the destination address is a Ceffu wallet address, the whitelisted address verification will be bypassed.\n\n> **IMPORTANT NOTES:** The **amount** field in Withdrawal (v2) endpoint means withdrawal amount **excluded** network fee in **v2**, that is exact amount receiver will receive. Please use `Get Withdrawal History v2` and `Get Withdrawal Detail (v2)` together with `Withdrawal (v2)`. \n  \n\n**API Key permission group** : `Enable Withdrawal`, `Enable Whitelisted Address Checking`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| network | string | Network symbol |\n| coinSymbol | string | Coin symbol |\n| walletId | string | Source wallet id |\n| amount | string | Amount to withdrawal |\n| requestId | string/integer | Unique Identifier |\n| withdrawalAddress | string | (Optional) Destination address |\n| toWalletIdStr | string | (Optional) Destination Ceffu wallet id |\n| memo | string | (Optional) Memo/address tag |\n| customizeFeeAmount | string | (Optional) User-specified fee, now support on QW/CW for ETH network only |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/transaction/history",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"transaction",
+								"history"
+							]
+						},
+						"description": "This method allows you to get transaction history which is a concise record of all your transactions.\n\n**API Key permission group** : `Transaction History`\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| institutionId | string | Institution id |\n| startDate | string | Date in YYYYMMDD format |\n| endDate | string | Date in YYYYMMDD format |\n| walletType | integer | Wallet type  <br>10 (Qualified Wallet)  <br>12 (Cosign Wallet)  <br>20 (Prime Wallet)  <br>21 (Prime Sub-Wallet) |\n| bizTypes | array\\[integer\\] | (Optional) List of Business types  <br>10 (Withdrawal)  <br>15 (Deposit)  <br>3110 (MirrorX Delegation)  <br>3120 (MirrorX Undelegation)  <br>3130 (MirrorX Settlement) |\n| walletIds | array\\[string\\] | (Optional) List of wallet ids |\n| networks | array\\[string\\] | (Optional) List of network symbols |\n| symbols | array\\[string\\] | (Optional) List of coin symbols |\n| txId | string | (Optional) Transaction id |\n| pageLimit | number | (Optional) Page limit, min: 1, max: 100 |\n| pageNo | number | (Optional) Page number, min: 1 |"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub-Wallet Endpoint",
+			"item": [
+				{
+					"name": "Get Sub-Wallet List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/subwallet/list?timestamp&parentWalletId=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"subwallet",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "parentWalletId",
+									"value": "",
+									"description": "Parent wallet id"
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get sub wallet details list of the requested prime wallet ID (only applicable to prime Wallet)\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub-Wallet Asset Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/asset/list?timestamp&walletId=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"asset",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Prime Sub-Wallet id"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get sub wallet asset details of the requested Sub Wallet ID (Only applicable to Prime Wallet).\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub-Wallet Asset Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/asset/summary?timestamp=&walletIdStr=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"asset",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "",
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletIdStr",
+									"value": "",
+									"description": "Prime Wallet id /Prime Sub-Wallet id"
+								}
+							]
+						},
+						"description": "This method allows you to retrieves the asset summary in BTC equivalent value under the specified walletId including Prime and Sub Wallets. Please note that this equivalent value is provided for reference only and is based on our internal calculation.  \nWhen a parent prime wallet ID is passed as a parameter, the values of the total amount and locked amount represent the sum of all sub-wallets under the given parent prime wallet.  \nWhen a sub-wallet ID is passed as a parameter, the values of the total amount and locked amount represent the given sub-wallet.\n\nTo get the asset summary for a parent prime wallet, use the \"Get Wallet Asset Summary\" endpoint instead.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub-Wallet Deposit Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/deposit/address?timestamp=&walletId=&network=&coinSymbol=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"deposit",
+								"address"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "",
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Prime Sub-Wallet id"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "Network symbol"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "Coin symbol"
+								}
+							]
+						},
+						"description": "This method allows you to get deposit address of the requested Sub Wallet ID by coinSymbol and network.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prime Sub-Wallet Deposit History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v2/subwallet/deposit/history?timestamp&walletId=&startTime=&endTime=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v2",
+								"subwallet",
+								"deposit",
+								"history"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Prime Wallet id /Prime Sub-Wallet id"
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "Start time (timestamp in milliseconds)"
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "End time (timestamp in milliseconds)"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol, all symbols are returned if not specified",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get deposit history of the requested Wallet Id by coinSymbol and network.\n\n- If PrimeWallet ID provided, returns sub wallet deposit history under the Prime Wallet.\n    \n- If SubWallet ID provided, returns specified sub wallet deposit history.\n    \n\n_Notes:_\n\n- _Please notice the default startTime and endTime to make sure that time interval is within 0-30 days._\n    \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deposit Address List under Prime Wallet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/deposit/address/list?timestamp&parentWalletId=&network=&coinSymbol=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"deposit",
+								"address",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "parentWalletId",
+									"value": "",
+									"description": "Parent Prime wallet id"
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "Network symbol"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "Coin symbol"
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get all sub wallet deposit addresses under the requested parent Prime Wallet ID by coinSymbol and network.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transfer History between Sub-Wallet and Prime Wallet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/transfer/history?timestamp&walletId=&startTime=&endTime=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"transfer",
+								"history"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletId",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "Start time (timestamp in milliseconds)"
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "End time (timestamp in milliseconds)"
+								},
+								{
+									"key": "coinSymbol",
+									"value": "",
+									"description": "(Optional) Coin symbol",
+									"disabled": true
+								},
+								{
+									"key": "direction",
+									"value": "",
+									"description": "(Optional) Transfer Direction:\n10: prime wallet -> sub wallet\n20: sub wallet -> prime wallet\n30: sub wallet -> sub wallet\n40: prime wallet -> prime wallet",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "(Optional) Status:\n10: Pending\n20: Processing\n30: Send success\n99: Failed",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get transfer history between Prime Wallet and Sub Wallets (Only applicable to Prime wallet structure)\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction Details of Prime Wallet Internal Transfer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/transfer/detail?timestamp=&walletIdStr=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"transfer",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "",
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "walletIdStr",
+									"value": "",
+									"description": "Wallet id"
+								},
+								{
+									"key": "orderViewId",
+									"value": "",
+									"description": "(Optional) Order view id",
+									"disabled": true
+								},
+								{
+									"key": "requestId",
+									"value": "",
+									"description": "(Optional) Client unique identifier of internal transfer order",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get transaction detail of an internal transfer of Prime wallets\n\n- Either orderViewId or requestId shall be passed in params.\n    \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Sub-Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/create",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"create"
+							]
+						},
+						"description": "This method allows you to create Sub Wallet under the requested Parent Prime wallet\n\n**API Key permission group** : `Enable Wallet Management`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| parentWalletId | string | Parent Prime Wallet id |\n| walletName | string | (Optional) Name of wallet |\n| autoCollection | integer | (Optional) Enable auto sweeping to parent wallet:  <br>0: Disable  <br>1: Enable |\n| requestId | string/integer | (Optional) Unique Identifier |"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sub-Wallet Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/updateSubWallet",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"updateSubWallet"
+							]
+						},
+						"description": "This method allows to update sub wallet attributes.\n\n**API Key permission group** : `Enable Wallet Management`\n\nBody Params  \n\n| Field | Type | Description |  \n| --- | --- | --- |  \n| timestamp | integer | Request time in milliseconds |  \n| walletId | string | Prime Sub-Wallet id |  \n| walletName | string | (Optional) Name of wallet |  \n| autoCollection | integer | (Optional) Enable auto sweeping to parent wallet:  \n0: Disable  \n1: Enable |  \n| requestId | string/integer | (Optional) Unique Identifier |"
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer between Sub Wallet and Prime Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/subwallet/transfer",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"subwallet",
+								"transfer"
+							]
+						},
+						"description": "This method allows you to transfer asset between Sub Wallet and Prime Wallet  \n**API Key permission group** : `Enable Internal Transfer`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| fromWalletId | string | Source Wallet id |\n| toWalletId | string | Destination Wallet id |\n| amount | string | Transfer amount |\n| coinSymbol | string | Coin symbol |\n| requestId | string/integer | Unique Identifier |"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MirrorX Endpoint",
+			"item": [
+				{
+					"name": "Get MirrorX LinkId List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/mirrorX/mirrorXLinkId/list?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"mirrorX",
+								"mirrorXLinkId",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "pageLimit",
+									"value": null,
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get the list of MirrorX-linked Binance 3rd-Party Custodian UIDs (3PCUIDs). The Binance 3PCUIDs must be applied through the Ceffu Web by a creator role.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get MirrorX Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/mirrorX/order/list?timestamp&mirrorXLinkId=&startTime=&endTime=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"mirrorX",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "mirrorXLinkId",
+									"value": "",
+									"description": "Linkage id to Binance UID"
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "Start time (timestamp in milliseconds)"
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "End time (timestamp in milliseconds)"
+								},
+								{
+									"key": "coinSymbol",
+									"value": null,
+									"description": "(Optional) Coin symbol",
+									"disabled": true
+								},
+								{
+									"key": "orderType",
+									"value": null,
+									"description": "(Optional) MirrorX Order Types:\n10: delegation\n20: undelegation\n30: settlement",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": null,
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get mirrorX orders of the requested mirrorXLinkId, coinSymbol, orderType and timeframe.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Check MirrorX Available amount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/mirrorX/order/check?timestamp&mirrorXLinkId&coinSymbol&orderType",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"mirrorX",
+								"order",
+								"check"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "mirrorXLinkId",
+									"value": null,
+									"description": "Unique identifier of MirrorX linkage"
+								},
+								{
+									"key": "coinSymbol",
+									"value": null,
+									"description": "Coin symbol"
+								},
+								{
+									"key": "orderType",
+									"value": null,
+									"description": "MirrorX Order Types:\n10: delegate funds to Binance Third Party Custodian UIDs\n20: undelegate funds from Binance Third Party Custodian UIDs"
+								}
+							]
+						},
+						"description": "This method allows you to check MirrorX available amount for delegation/undelegation order.\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get MirrorX Asset Positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/mirrorX/positions/list?timestamp&mirrorXLinkId",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"mirrorX",
+								"positions",
+								"list"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "mirrorXLinkId",
+									"value": null,
+									"description": "Unique identifier of MirrorX linkage"
+								},
+								{
+									"key": "excludeZeroAmountFlag",
+									"value": null,
+									"description": "(Optional) Exclude the records with zero amount. default false",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": null,
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get mirrorX asset position\n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Place MirrorX Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/mirrorX/order",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"mirrorX",
+								"order"
+							]
+						},
+						"description": "This method allows you to delegete/undelegate MirrorX assets by specified MirrorX linked ID\n\n**API Key permission group** : `Enable Mirror Operation`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| mirrorXLinkId | integer | Unique identifier of MirrorX linkage |\n| orderType | integer | MirrorX Order Type:  <br>10: delegate funds to Binance Third Party Custodian UIDs 20: undelegate funds from Binance Third Party Custodian UIDs |\n| amount | string | Amount |\n| coinSymbol | string | Coin symbol |\n| requestId | string/integer | Unique Identifier |"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Webhook Endpoint",
+			"item": [
+				{
+					"name": "Resend webhook notifications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/entity/webhook/resend",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"entity",
+								"webhook",
+								"resend"
+							]
+						},
+						"description": "This method allows you to resend all failed webhook notifications to Webhook Endpoints by specifying the eventType.\n\n**API Key permission group** : `Enable Wallet Management`\n\nBody Params\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| webhookId | string | Event type:  <br>1: Deposit success  <br>2: Deposit failed  <br>3: Withdrawal success  <br>4: Withdrawal failed |\n| eventType | string | Destination Wallet id |\n| resendFromDateTime | number | Timestamp in millisecond |\n| coinSymbol | string | Coin symbol |"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var navigator = {}; //fake a navigator object for the lib",
+					"var window = {}; //fake a window object for the lib",
+					"",
+					"pm.sendRequest(pm.collectionVariables.get(\"jsrsasign_cdn\"), (err, res) => {",
+					"  pm.collectionVariables.set(\"jsrsasign\", res.text());",
+					"",
+					"  eval(pm.collectionVariables.get(\"jsrsasign\"));",
+					"",
+					"  const OPEN_APIKEY = pm.environment.get(\"openapi\");",
+					"  const SECRET = pm.environment.get(\"secret\");",
+					"",
+					"  const sign = (str) => {",
+					"    const prvKeyObj = KEYUTIL.getKey(",
+					"      \"-----BEGIN PRIVATE KEY-----\\n\" +",
+					"        hextob64(b64tohex(SECRET))",
+					"          .match(/.{1,64}/g)",
+					"          .join(\"\\n\") +",
+					"        \"\\n-----END PRIVATE KEY-----\"",
+					"    );",
+					"    const sig = new KJUR.crypto.Signature({ alg: \"SHA512withRSA\" });",
+					"    sig.init(prvKeyObj);",
+					"    sig.updateString(str);",
+					"    return Buffer.from(sig.sign(), \"hex\").toString(\"base64\");",
+					"  };",
+					"",
+					"  const timestamp = new Date().valueOf();",
+					"  let dataString = \"\";",
+					"  if (pm.request.method === \"GET\") {",
+					"    pm.request.removeQueryParams(\"timestamp\");",
+					"    pm.request.addQueryParams(`timestamp=${timestamp}`);",
+					"    dataString = pm.request.url.getQueryString();",
+					"  } else {",
+					"    const body = JSON.parse(pm.request.body.raw);",
+					"    if (typeof body.requestId !== 'string') {",
+					"        body.requestId = timestamp;",
+					"    }",
+					"    body.timestamp = timestamp;",
+					"    pm.request.body.raw = JSON.stringify(body);",
+					"    dataString = pm.request.body.raw;",
+					"  }",
+					"  const signature = sign(dataString);",
+					"  pm.request.headers.upsert({",
+					"    key: \"open-apikey\",",
+					"    value: OPEN_APIKEY,",
+					"  });",
+					"  pm.request.headers.upsert({",
+					"    key: \"signature\",",
+					"    value: signature,",
+					"  });",
+					"});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jsrsasign_cdn",
+			"value": "https://kjur.github.io/jsrsasign/jsrsasign-all-min.js",
+			"type": "string"
+		},
+		{
+			"key": "jsrsasign",
+			"value": ""
+		}
+	]
+}
