@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "e4d5ebb2-4ba9-45c5-a695-2d66596b82e7",
+		"_postman_id": "7af13470-22b9-451c-a866-b09a84b673e3",
 		"name": "OpenAPI Documentation",
 		"description": "This is a Postman collection of Ceffu OpenAPI  \n[https://apidoc.ceffu.io/apidoc/shared-c9ece2c6-3ab4-4667-bb7d-c527fb3dbf78/doc-338167](https://apidoc.ceffu.io/apidoc/shared-c9ece2c6-3ab4-4667-bb7d-c527fb3dbf78/doc-338167)\n\nTo start with, fill in the values of \"openapi\" and \"secret\" in production environment.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37536112",
-		"_collection_link": "https://ceffu0.postman.co/workspace/5827e483-9784-48b3-a454-d82596d9a252/collection/37536112-e4d5ebb2-4ba9-45c5-a695-2d66596b82e7?action=share&source=collection_link&creator=37536112"
+		"_collection_link": "https://ceffu0.postman.co/workspace/Ceffu-OpenApi-Documentation~5827e483-9784-48b3-a454-d82596d9a252/collection/37536112-7af13470-22b9-451c-a866-b09a84b673e3?action=share&source=collection_link&creator=37536112"
 	},
 	"item": [
 		{
@@ -643,6 +643,135 @@
 					"response": []
 				},
 				{
+					"name": "Get Whitelisted Address List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/pageWhitelist?timestamp=",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"pageWhitelist"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "",
+									"description": "Request time in milliseconds"
+								},
+								{
+									"key": "addressType",
+									"value": "",
+									"description": "(Optional) Address type, 1 (standard) or 2 (universal)",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "",
+									"description": "(Optional) Blockchain address",
+									"disabled": true
+								},
+								{
+									"key": "label",
+									"value": "",
+									"description": "(Optional) Custom label of address on system",
+									"disabled": true
+								},
+								{
+									"key": "symbol",
+									"value": "",
+									"description": "(Optional) Coin symbol",
+									"disabled": true
+								},
+								{
+									"key": "network",
+									"value": "",
+									"description": "(Optional) Network symbol",
+									"disabled": true
+								},
+								{
+									"key": "memo",
+									"value": "",
+									"description": "(Optional) Address memo",
+									"disabled": true
+								},
+								{
+									"key": "whitelistId",
+									"value": "",
+									"description": "(Optional) Whitelisted address id on system",
+									"disabled": true
+								},
+								{
+									"key": "startTime",
+									"value": "",
+									"description": "(Optional) Start time (timestamp in milliseconds)",
+									"disabled": true
+								},
+								{
+									"key": "endTime",
+									"value": "",
+									"description": "(Optional) End time (timestamp in milliseconds)",
+									"disabled": true
+								},
+								{
+									"key": "pageLimit",
+									"value": "",
+									"description": "(Optional) Page limit, min: 1, max: 500",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "(Optional) Page number, min: 1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This method allows you to get a whitelisted address list.  \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Correspondent’s Options",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/whitelist/options?timestamp",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"whitelist",
+								"options"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": null,
+									"description": "Request time in milliseconds"
+								}
+							]
+						},
+						"description": "This method allows you to get all configuration options of the whitelisted address.  \n\n**API Key permission group** : `Enable Enquiry`"
+					},
+					"response": []
+				},
+				{
 					"name": "Create Wallet",
 					"request": {
 						"method": "POST",
@@ -772,6 +901,39 @@
 							]
 						},
 						"description": "This method allows you to get transaction history which is a concise record of all your transactions.\n\n**API Key permission group** : `Transaction History`\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| institutionId | string | Institution id |\n| startDate | string | Date in YYYYMMDD format |\n| endDate | string | Date in YYYYMMDD format |\n| walletType | integer | Wallet type  <br>10 (Qualified Wallet)  <br>12 (Cosign Wallet)  <br>20 (Prime Wallet)  <br>21 (Prime Sub-Wallet) |\n| bizTypes | array\\[integer\\] | (Optional) List of Business types  <br>10 (Withdrawal)  <br>15 (Deposit)  <br>3110 (MirrorX Delegation)  <br>3120 (MirrorX Undelegation)  <br>3130 (MirrorX Settlement) |\n| walletIds | array\\[string\\] | (Optional) List of wallet ids |\n| networks | array\\[string\\] | (Optional) List of network symbols |\n| symbols | array\\[string\\] | (Optional) List of coin symbols |\n| txId | string | (Optional) Transaction id |\n| pageLimit | number | (Optional) Page limit, min: 1, max: 100 |\n| pageNo | number | (Optional) Page number, min: 1 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Add/Edit Whitelisted Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://open-api.ceffu.com/open-api/v1/wallet/addWhitelist",
+							"protocol": "https",
+							"host": [
+								"open-api",
+								"ceffu",
+								"com"
+							],
+							"path": [
+								"open-api",
+								"v1",
+								"wallet",
+								"addWhitelist"
+							]
+						},
+						"description": "This method allows you to add/edit a whitelisted address.\n\n**API Key permission group** : `Enable Wallet Management`\n\n| Field | Type | Description |\n| --- | --- | --- |\n| timestamp | integer | Request time in milliseconds |\n| whitelistId | string | Whitelist address ID, required when edit |\n| addressType | integer | Address type, 1 (standard) or 2 (universal) |\n| address | string | Blockchain address |\n| label | string | Custom label of address on system |\n| symbol | string | Coin symbol |\n| network | string | Network symbol |\n| memo | string | (Optional) Address memo |\n| correspondentDetail | object {  <br>\"firstName\": string,  <br>\"lastName\": string,  <br>\"fullName\": string,  <br>\"birthday\": string,  <br>\"provider\": string,  <br>\"countryInfo\": string,  <br>\"toFromType\": number, 0 (Virtual Assets Services Providers) /1 (Unhosted Wallet  <br>) /2 (Others),  <br>\"correspondentType\": number, 0 (Entity) /1 (Individual),  <br>\"othersPleaseSpecify\": \"string\"  <br>} | (Optional) Correspondent detail of address |"
 					},
 					"response": []
 				}
